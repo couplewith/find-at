@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html> 
+    <head> 
+        <title>Loader</title> 
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script> 
+<script>
+function get_page(strurl){
+ jQuery.ajax({
+      type: "get",
+      url : strurl,
+      success:function(data){
+        $( "#error").html("success!!");
+        $( "#test2").html(data);
+      },
+      error : function(err) {
+        $( "#error").html(data);
+        $( "#error").html(strurl);
+        $( "#error").html(err);
+      }
+    });
+}
+</script>
+        <script type="text/javascript">
+
+            $(document).ready(function(){
+                $('#test').load('/geo_sample/geo_seoul_multi.html', '', function(response, status, xhr) {
+                    if (status == 'error') {
+                        var msg = "Sorry but there was an error: ";
+                        $(".content").html(msg + xhr.status + " " + xhr.statusText);
+                    }
+                });
+            });
+        get_page('/geo_sample/geo_seoul_multi.html');
+        </script> 
+
+    </head>
+    <body> 
+        <div id="error"></div>
+        <div id="test2"></div> >>>>>
+        <div id="test"></div>
+    </body>
+</html>
