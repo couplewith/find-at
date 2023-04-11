@@ -30,3 +30,5 @@ Requirement
  - cr_es_region.sql    : create Es region data
  - load_es_region.sql  : create DB region data 
  - php_composer.sh
+ - phpinfo.txt
+
